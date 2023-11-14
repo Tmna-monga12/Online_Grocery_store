@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/icon" href="/html/image/favicon.PNG" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <title>Online Grocery Store</title>
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo">
+        <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+        Cooperative<span> Store</span></a>
+
+        <div class="icons">
+            {{!-- <div class="fa fa-user" id="login-btn" style="margin-right: 10rem;"></div> --}}
+        </div>
+
+
+      {{!-- <div class="login-form">
+        <h3>Login</h3>
+        <form action="/login" method="post"></form>
+        <input type="text" placeholder="enter your email" class="box" name="email"/>
+        <input type="password" placeholder="enter your password" class="box" name="password " />
+        <span
+          >You Don't Have An Account Yet?
+          <button id="signup">Create it now</button></span>
+        <input type="submit" class="btn" value="Login"><br />
+        </form>
+      </div> --}}
+
+
+
+      <div class="registration-form" style="top: 220%;">
+        <h3>Register</h3>
+        <form action="/register" method="post">
+        <input type="text" placeholder="enter your name" class="box" name="name" />
+        <input type="text" placeholder="enter your mobile no." class="box" name="phone" />
+        <input type="text" placeholder="enter your email" class="box" name="email" />
+        <input type="text" placeholder="enter your address" class="box" name="address" />
+        <input type="password" placeholder="enter your password" class="box" name="password"/>
+        <input type="submit" class="btn" value="Register"><br />
+        {{!-- <span>Already have an Account? <button id="signin">Sign In</button></span> --}}
+        </form>
+      </div>
+    </header>
+
+
+
+    <section class="home" id="home" >
+        <div class="content" >
+          <img src="image/home.PNG" alt="" style="width: 151.6rem; height: 78rem; overflow:hidden">
+          {{!-- <h3>Fresh And <span>Organic</span> Products For You</h3> --}}
+          
+        </div>
+      </section>
+
+
+    <script src="js/login.js"></script>
+  </body>
+</html>

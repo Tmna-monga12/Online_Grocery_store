@@ -1,0 +1,627 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Grocery Store</title>
+    <link rel="icon" type="image/icon" href="/html/image/favicon.PNG" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/> -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+  </head>
+
+  <body>
+    <header class="header">
+      <a href="#" class="logo">
+        <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+        Cooperative<span> Store</span></a>
+      <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#products">Products</a>
+        <a href="#review">Review</a>
+        <a href="#aboutus">About Us</a>
+        <a href="#contactus">Contact Us</a>
+      </nav>
+
+      <div class="icons">
+        <div class="fa fa-bars" id="menu-btn"></div>
+        <!-- <div class="fa fa-search" id="search-btn"></div> -->
+        <div class="fa fa-shopping-cart" id="cart-btn"></div>
+        <form action="/logout" method="post">
+          <button><div class="fa fa-sign-out" id="logout-btn"></div></button>
+        </form>
+      </div>
+
+      <!-- <form class="search-form">
+            <input type="text" id="search-box" placeholder="Search here...">
+            <label for="search-box" class="fa fa-search"></label>
+        </form> -->
+
+      <div class="shopping-cart">
+        <div class="box">
+          <div class="content">
+            <h2 id="cartItem">MY CART</h2>
+            <div class="cart-row">
+              <span class="cart-item cart-header cart-column">ITEM</span>
+              <span class="cart-price cart-header cart-column">PRICE</span>
+              <span
+                class="cart-quantity cart-header cart-column"
+              >QUANTITY</span>
+            </div>
+
+            <div class="cart-items">
+              <div class="cart-row">
+                <div class="cart-item cart-column">
+                  <img
+                    class="cart-item-image"
+                    src="image/onion.jpg"
+                    width="80"
+                    height="80"
+                  />
+                  <span class="cart-item-title">Onion</span>
+                </div>
+                <span class="cart-price cart-column">Rs. 20</span>
+                <div class="cart-quantity cart-column">
+                  <input class="cart-quantity-input" type="number" value="1" />
+                  <button class="btn btn-danger" type="button"><i
+                      class="fa fa-trash"
+                    ></i></button>
+                </div>
+              </div>
+
+              {{! <div class="cart-row">
+              <div class="cart-item cart-column">
+                <img class="cart-item-image" src="image/apple.jpg" width="80" height="80">
+                <span class="cart-item-title">Apple</span>
+              </div>
+              <span class="cart-price cart-column">Rs. 100</span>
+              <div class="cart-quantity cart-column">
+                <input class="cart-quantity-input" type="number" value="2">
+                <button class="btn btn-danger" type="button"><i class="fa fa-trash"></i></button>
+              </div>
+            </div> }}
+
+              {{! <div class="cart-row">
+              <div class="cart-item cart-column">
+                <img class="cart-item-image" src="image/garam masala.jpg" width="80" height="80">
+                <span class="cart-item-title">Garam Masala</span>
+              </div>
+              <span class="cart-price cart-column">Rs. 69</span>
+              <div class="cart-quantity cart-column">
+                <input class="cart-quantity-input" type="number" value="4">
+                <button class="btn btn-danger" type="button"><i class="fa fa-trash"></i></button>
+              </div>
+            </div> }}
+
+            </div>
+
+            <div class="cart-total">
+              <h3 class="cart-total-title">Total</h3>
+              <h3 class="cart-total-price">Rs. 220</h3>
+            </div>
+            <button
+              class="btn btn-primary btn-purchase"
+              type="button"
+            >PURCHASE</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="home" id="home">
+      <div class="content">
+        <img
+          src="image/home.PNG"
+          alt=""
+          style="width: 151.6rem; height: 78rem; padding-top: 0rem"
+        />
+      </div>
+    </section>
+
+    <section class="categories" id="categories">
+      <h1 class="heading">Our <span>Categories</span></h1>
+
+      <div class="box-container">
+        <div class="box">
+          <a href="#fruits"> <img src="image/cat-2.png" alt="" /></a>
+          <h3>Fresh Fruits</h3>
+        </div>
+        <div class="box">
+          <a href="#vegetables"> <img src="image/cat-1.png" alt="" /></a>
+          <h3>Vegetables</h3>
+        </div>
+        <div class="box">
+          <a href="#dairy-products"> <img src="image/cat-3.png" alt="" /></a>
+          <h3>Dairy Products</h3>
+        </div>
+        <div class="box">
+          <a href="#masalas"> <img src="image/catch-1.png" alt="" /></a>
+          <h3>Masalas</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="products" id="products" class="container content-section">
+      <h1 class="heading">Our <span>Products</span></h1>
+      <h3 class="fruits" id="fruits">Fruits</h3>
+
+      <div class="swiper product-slider">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="box">
+              <div class="shop-items">
+                <div class="shop-item">
+                  <img class="shop-item-image" src="image/ore.jpg" alt="" />
+                  <h1 class="shop-item-title">Fresh Orange</h1>
+                  <div class="quantity">Qty : 1Kg</div>
+                  <div class="price" class="shop-item-price">Rs. 70.00</div>
+                  <button
+                    class="btn btn-primary shop-item-button"
+                    type="button"
+                  >Add to Cart</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="box">
+              <div class="shop-items">
+                <div class="shop-item">
+                  <img class="shop-item-image" src="image/ava.jpg" alt="" />
+                  <h1 class="shop-item-title">Fresh Avacado</h1>
+                  <div class="quantity">Qty : 1Kg</div>
+                  <div class="price">Rs. 316.00</div>
+                  <button
+                    class="btn btn-primary shop-item-button"
+                    type="button"
+                  >Add to Cart</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="box">
+              <div class="shop-items">
+                <div class="shop-item">
+                  <img class="shop-item-image" src="image/apple.jpg" alt="" />
+                  <h1 class="shop-item-title">Fresh Apple</h1>
+                  <div class="quantity">Qty : 1Kg</div>
+                  <div class="price">Rs. 100.00</div>
+                  <button
+                    class="btn btn-primary shop-item-button"
+                    type="button"
+                  >Add to Cart</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="box">
+              <div class="shop-items">
+                <div class="shop-item">
+                  <img src="image/cherry.jpg" alt="" />
+                  <h1>Fresh Cherry</h1>
+                  <div class="quantity">Qty : 1Kg</div>
+                  <div class="price">Rs. 500.00</div>
+                  <button
+                    class="btn btn-primary shop-item-button"
+                    type="button"
+                  >Add to Cart</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="box">
+              <div class="shop-items">
+                <div class="shop-item">
+                  <img src="image/grape.jpg" alt="" />
+                  <h1>Fresh Grapes</h1>
+                  <div class="quantity">Qty : 1Kg</div>
+                  <div class="price">Rs. 157.89</div>
+                  <button
+                    class="btn btn-primary shop-item-button"
+                    type="button"
+                  >Add to Cart</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="box">
+              <div class="shop-items">
+                <div class="shop-item">
+                  <img src="image/banana.jpg" alt="" />
+                  <h1>Fresh Banana</h1>
+                  <div class="quantity">Qty : 1Kg</div>
+                  <div class="price">Rs. 42.00</div>
+                  <button class="btn btn-primary shop-item-button" type="button">Add
+                  to Cart</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="box">
+              <div class="shop-items">
+                <div class="shop-item">
+                  <img src="image/kiwi-large.jpg" alt="" />
+                  <h1>Fresh Kiwi</h1>
+                  <div class="quantity">Qty : 1Kg</div>
+                  <div class="price">Rs. 150.00</div>
+                  <button class="btn btn-primary shop-item-button" type="button">Add
+                  to Cart</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="box">
+              <div class="shop-items">
+                <div class="shop-item">
+                  <img src="image/pome.jpg" alt="" />
+                  <h1>Fresh Pomegranate</h1>
+                  <div class="quantity">Qty : 1Kg</div>
+                  <div class="price">Rs. 167.00</div>
+                  <button class="btn btn-primary shop-item-button" type="button">Add
+                  to Cart</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="vegetables" id="vegetables">Vegetables</h3>
+      <div class="swiper product-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide box">
+            <img src="image/cabbage.jpg" alt="" />
+            <h1>Fresh Cabbage</h1>
+            <div class="quantity">Qty : 1Kg</div>
+            <div class="price">Rs. 40.00</div>
+            <a href="#" class="btn"> Add to Cart</a>
+          </div>
+          <div class="swiper-slide box">
+            <img src="image/potato.jpg" alt="" />
+            <h1>Fresh Potato</h1>
+            <div class="quantity">Qty : 1Kg</div>
+            <div class="price">Rs. 23.50</div>
+            <a href="#" class="btn"> Add to Cart</a>
+          </div>
+          <div class="swiper-slide box">
+            <img src="image/carrot .jpg" alt="" />
+            <h1>Fresh Carrot</h1>
+            <div class="quantity">Qty : 1Kg</div>
+            <div class="price">Rs. 58.00</div>
+            <a href="#" class="btn"> Add to Cart</a>
+          </div>
+          <div class="swiper-slide box">
+            <img src="image/tomat.jpg" alt="" />
+            <h1>Fresh Tomato</h1>
+            <div class="quantity">Qty : 1Kg</div>
+            <div class="price">Rs. 19.72</div>
+            <a href="#" class="btn"> Add to Cart</a>
+          </div>
+          <div class="swiper-slide box">
+            <img src="image/onion.jpg" alt="" />
+            <h1>Fresh Onion</h1>
+            <div class="quantity">Qty : 1Kg</div>
+            <div class="price">Rs. 20.00</div>
+            <a href="#" class="btn"> Add to Cart</a>
+          </div>
+          <div class="swiper-slide box">
+            <img src="image/brocolli.jpg" alt="" />
+            <h1>Fresh Broccoli</h1>
+            <div class="quantity">Qty : 1Kg</div>
+            <div class="price">Rs. 200.00</div>
+            <a href="#" class="btn"> Add to Cart</a>
+          </div>
+          <div class="swiper-slide box">
+            <img src="image/mushroom.jpg" alt="" />
+            <h1>Fresh Mushroom</h1>
+            <div class="quantity">Qty : 1Kg</div>
+            <div class="price">Rs. 130.00</div>
+            <a href="#" class="btn"> Add to Cart</a>
+          </div>
+          <div class="swiper-slide box">
+            <img src="image/green pepper.jpg" alt="" />
+            <h1>Fresh Green Pepper</h1>
+            <div class="quantity">Qty : 1Kg</div>
+            <div class="price">Rs. 82.00</div>
+            <a href="#" class="btn"> Add to Cart</a>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="dairy-products" id="dairy-products">Dairy Products</h3>
+      <div class="swiper product-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide box">
+            <img src="image/milk.jpg" alt="" />
+            <h1>Amul Milk</h1>
+            <div class="quantity">Qty : 1L</div>
+            <div class="price">Rs. 69.00</div>
+            <a href="#" class="btn"> Add to Cart</a>
+          </div>
+          <div class="swiper-slide box">
+            <img src="image/butter.jpg" alt="" />
+            <h1>Amul Butter</h1>
+            <div class="quantity">Qty : 500g</div>
+            <div class="price">Rs. 256</div>
+            <a href="#" class="btn"> Add to Cart</a>
+          </div>
+          <div class="swiper-slide box">
+            <img src="image/ghee.jpg" alt="" />
+            <h1>Amul Ghee</h1>
+            <div class="quantity">Qty : 500ml</div>
+            <div class="price">Rs. 274.80</div>
+            <a href="#" class="btn"> Add to Cart</a>
+          </div>
+          <div class="swiper-slide box">
+            <img src="image/paneer.jpg" alt="" />
+            <h1>Amul Paneer</h1>
+            <div class="quantity">Qty : 200g</div>
+            <div class="price">Rs. 91</div>
+            <a href="#" class="btn"> Add to Cart</a>
+          </div>
+          <div class="swiper-slide box">
+            <img src="image/lassii.jpg" alt="" />
+            <h1>Amul Lassi</h1>
+            <div class="quantity">Qty : 250ml</div>
+            <div class="price">Rs. 23.00</div>
+            <a href="#" class="btn"> Add to Cart</a>
+          </div>
+          <div class="swiper-slide box">
+            <img src="image/curd.jpg" alt="" />
+            <h1>Amul Curd</h1>
+            <div class="quantity">Qty : 400g</div>
+            <div class="price">Rs. 34.00</div>
+            <a href="#" class="btn"> Add to Cart</a>
+          </div>
+          <div class="swiper-slide box">
+            <img src="image/condensed-milk.jpg" alt="" />
+            <h1>Amul Condensed Milk</h1>
+            <div class="quantity">Qty : 200g</div>
+            <div class="price">Rs. 61.00</div>
+            <a href="#" class="btn"> Add to Cart</a>
+          </div>
+          <div class="swiper-slide box">
+            <img src="image/cream.jpg" alt="" />
+            <h1>Amul Cream</h1>
+            <div class="quantity">Qty : 1L</div>
+            <div class="price">Rs. 220.00</div>
+            <a href="#" class="btn"> Add to Cart</a>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="masala" id="masalas">Masalas</h3>
+      <div class="swiper product-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide box">
+            <img src="image/garam masala.jpg" alt="" />
+            <h1>Catch Garam Masala</h1>
+            <div class="quantity">Qty : 100g</div>
+            <div class="price">Rs. 87.00</div>
+            <a href="#" class="btn"> Add to Cart</a>
+          </div>
+          <div class="swiper-slide box">
+            <img src="image/king.jpg" alt="" />
+            <h1>Catch Kitchen King</h1>
+            <div class="quantity">Qty : 100g</div>
+            <div class="price">Rs. 69.50</div>
+            <a href="#" class="btn"> Add to Cart</a>
+          </div>
+          <div class="swiper-slide box">
+            <img src="image/turmeric.jpg" alt="" />
+            <h1>Catch Turmeric Powder</h1>
+            <div class="quantity">Qty : 100g</div>
+            <div class="price">Rs. 28.05</div>
+            <a href="#" class="btn"> Add to Cart</a>
+          </div>
+          <div class="swiper-slide box">
+            <img src="image/red chilli.jpg" alt="" />
+            <h1>Catch Kashmiri Mirch Powder</h1>
+            <div class="quantity">Qty : 100g</div>
+            <div class="price">Rs. 70</div>
+            <a href="#" class="btn"> Add to Cart</a>
+          </div>
+          <div class="swiper-slide box">
+            <img src="image/sabzi masala.jpg" alt="" />
+            <h1>Catch Sabzi Masala</h1>
+            <div class="quantity">Qty : 100g</div>
+            <div class="price">Rs. 52</div>
+            <a href="#" class="btn"> Add to Cart</a>
+          </div>
+          <div class="swiper-slide box">
+            <img src="image/black pepper.jpg" alt="" />
+            <h1>Catch Black Pepper Powder</h1>
+            <div class="quantity">Qty : 100g</div>
+            <div class="price">Rs. 133</div>
+            <a href="#" class="btn"> Add to Cart</a>
+          </div>
+          <div class="swiper-slide box">
+            <img src="image/coriender powder.jpg" alt="" />
+            <h1>Catch Coriander Powder</h1>
+            <div class="quantity">Qty : 100g</div>
+            <div class="price">Rs. 36.55</div>
+            <a href="#" class="btn"> Add to Cart</a>
+          </div>
+          <div class="swiper-slide box">
+            <img src="image/tea masala.jpg" alt="" />
+            <h1>Catch Tea Masala</h1>
+            <div class="quantity">Qty : 100g</div>
+            <div class="price">Rs. 53.00</div>
+            <a href="#" class="btn"> Add to Cart</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="review" id="review">
+      <h1 class="heading">Coustmer's <span>Review</span></h1>
+
+      <div class="swiper review-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide box">
+            <img src="image/pic-1.png" alt="" />
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum ea
+              nobis soluta?
+            </p>
+            <h3>Piyush Nahar</h3>
+            <div class="stars">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half"></i>
+            </div>
+          </div>
+          <div class="swiper-slide box">
+            <img src="image/pic-2.png" alt="" />
+            <p>
+              Fresh Products. I like it.
+            </p>
+            <h3>Chetna Bansal</h3>
+            <div class="stars">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+          </div>
+          <div class="swiper-slide box">
+            <img src="image/pic-3.png" alt="" />
+            <p>
+              All products are so fresh.
+            </p>
+            <h3>Piyush Nahar</h3>
+            <div class="stars">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half"></i>
+            </div>
+          </div>
+          <div class="swiper-slide box">
+            <img src="image/pic-4.png" alt="" />
+            <p>
+              Affordable Price.
+            </p>
+            <h3>Tamanna Monga</h3>
+            <div class="stars">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="aboutus" id="aboutus">
+      <h1 class="heading">About <span>Us</span></h1>
+      <div class="box-container">
+        <div class="box">
+          <img src="image/blog-2.jpg" alt="" />
+          <p>
+            An online grocery store permits a customer to submit online orders
+            for items and/or services from a store that serves online customers.
+            The online store system presents an online display of all the items
+            they want to sell. This web based application help customers choose
+            the daily needs and add products to their shopping cart. Customer's
+            provide their complete detail of address and contact and they get
+            the chosen product in their home. This web application saves lots of
+            time of customers.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer" id="contactus">
+      <div class="box-container">
+        <div class="box">
+          <h3>Quick Links</h3>
+          <div class="share">
+            <a href="#home" class="links"><i class="fa fa-arrow-right"></i>
+              Home</a>
+            <a href="#categories" class="links"><i
+                class="fa fa-arrow-right"
+              ></i>
+              Categories</a>
+            <a href="#products" class="links"><i class="fa fa-arrow-right"></i>
+              Products</a>
+            <a href="#review" class="links"><i class="fa fa-arrow-right"></i>
+              Reviews</a>
+            <a href="#aboutus" class="links"><i class="fa fa-arrow-right"></i>
+              About Us</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <h3>Contact Info</h3>
+          <p>
+            If you have any kind of questions either about our services or our
+            products. Please feel free to contact us.
+          </p>
+          <a href="#" class="links"><i class="fa fa-phone"></i>
+            +91 8199083512</a>
+          <a href="#" class="links"><i class="fa fa-envelope"></i>
+            tammyarora1210@gmail.com</a>
+          <a href="#" class="links"><i class="fa fa-map-marker"></i>
+            Ratia, Dist.Fatehabad, Haryana, India - 125051</a>
+        </div>
+
+        <div class="box">
+          <h3>Location</h3>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d216.63647399573685!2d75.57703956495965!3d29.68545669850666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39117355c8cbf4e5%3A0xa043e37c9488571a!2sGN%20Kariyana%20Store!5e0!3m2!1sen!2sin!4v1682601925218!5m2!1sen!2sin"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </div>
+
+      <div class="credit">
+        Created by
+        <span>Tamanna Monga</span>
+        | All Rights Reserved
+      </div>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
+    ></script>
+    <script src="js/script.js"></script>
+  </body>
+
+</html>
